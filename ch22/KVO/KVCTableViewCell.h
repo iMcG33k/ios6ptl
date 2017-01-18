@@ -27,6 +27,6 @@
 
 @interface KVCTableViewCell : UITableViewCell
 - (id)initWithReuseIdentifier:(NSString*)identifier;
-@property (nonatomic, readwrite, strong) id object;
+@property (nonatomic, readwrite, strong) id object;    //SW: Does have retain cycle here?
 @property (nonatomic, readwrite, copy) NSString *property;
 @end

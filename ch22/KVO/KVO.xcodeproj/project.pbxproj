@@ -138,6 +138,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
+				TargetAttributes = {
+					FBC741E8141E75EB003A090A = {
+						DevelopmentTeam = N328BC563N;
+					};
+				};
 			};
 			buildConfigurationList = FBC741E3141E75EA003A090A /* Build configuration list for PBXProject "KVO" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -252,9 +257,11 @@
 		FBC74208141E75EB003A090A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = N328BC563N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KVO/KVO-Prefix.pch";
 				INFOPLIST_FILE = "KVO/KVO-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naton.iosptlkvoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -263,9 +270,11 @@
 		FBC74209141E75EB003A090A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = N328BC563N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KVO/KVO-Prefix.pch";
 				INFOPLIST_FILE = "KVO/KVO-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naton.iosptlkvoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

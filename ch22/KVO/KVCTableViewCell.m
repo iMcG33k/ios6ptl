@@ -53,10 +53,11 @@
   if (self.isReady) {
     [self.object addObserver:self forKeyPath:self.property
                      options:0 
-                     context:(__bridge void*)self];
+                     context:(__bridge void*)self]; // context, To distinguish The callback where come from, whether self or super.
   }
 }
 
+// KVO callback
 - (void)observeValueForKeyPath:(NSString *)keyPath 
                       ofObject:(id)object 
                         change:(NSDictionary *)change 
