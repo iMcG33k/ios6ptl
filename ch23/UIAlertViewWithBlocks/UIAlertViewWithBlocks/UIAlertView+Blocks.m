@@ -5,6 +5,7 @@
 
 #import "UIAlertView+Blocks.h"
 
+//SW: 为块声明静态存储空间 (也可以通过)
 static DismissBlock _dismissBlock;
 static CancelBlock _cancelBlock;
 
@@ -16,7 +17,8 @@ static CancelBlock _cancelBlock;
                       otherButtonTitles:(NSArray*) otherButtons
                               onDismiss:(DismissBlock) dismissed                   
                                onCancel:(CancelBlock) cancelled {
-  
+ 
+    //SW: 复制到静态存储空间
   _cancelBlock  = [cancelled copy];
   
   _dismissBlock  = [dismissed copy];
@@ -33,7 +35,8 @@ static CancelBlock _cancelBlock;
   [alert show];
   return alert;
 }
-
+//SW: 实现UIAlertViewDelegate方法
+//Bug: 没有找到这个委托方法。。。  应该是clickedButtonAtIndex
 + (void)alertView:(UIAlertView*) alertView didDismissWithButtonIndex:(NSInteger) buttonIndex {
   
 	if(buttonIndex == [alertView cancelButtonIndex])
