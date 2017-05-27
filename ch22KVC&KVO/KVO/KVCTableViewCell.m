@@ -32,7 +32,7 @@
 }
 
 - (void)update {
-  self.textLabel.text = self.isReady ?
+  self.textLabel.text = self.isReady ?      // 判断 object && property 条件是否同时满足， 防止kvc找不到value崩溃
   [[self.object valueForKeyPath:self.property] description]
   : @"";
 }
@@ -82,13 +82,13 @@
   [self removeObservation];
   _object = anObject;
   [self addObservation];
-  [self update];
+  [self update];      // 设置的同时立刻更新一遍1 （两次都更新，无论先设置哪个都可以）
 }
 
 - (void)setProperty:(NSString *)aProperty {
-  [self removeObservation];
+  [self removeObservation];   // 如果有就先移除
   _property = aProperty;
-  [self addObservation];
-  [self update];
+  [self addObservation];      // 同下, 有isReady保证，所以可以两次添加
+  [self update];      // 设置的同时立刻更新一遍2 （两次都更新，无论先设置哪个都可以）
 }
 @end
